@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+      * {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    animation: fade 0.75s;
+
+}
+
+.banner {
+    background-image: url(images/20220601_144145.jpg);
+    width: 100%;
+    height: 280px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left p {
+    color: white;
+    font-family: poppins;
+    font-size: 18px;
+    margin-bottom: 3px;
+    margin-left: 50px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right ul {
+    list-style: none;
+    margin-right: 60px;
+}
+
+.right ul li {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.right ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: poppins;
+    transition: 0.3s;
+    padding: 0;
+}
+
+.banner-info {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.title {
+    color: white;
+    font-family: poppins;
+    font-size: 36px;
+    margin-bottom: 2px;
+}
+
+.my-info {
+    color: white;
+    font-family: poppins;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.hero-btn {
+    background-color: transparent;
+    color: white;
+    font-family: 12px;
+    border: 1px solid white;
+    width: 100px;
+    text-align: center;
+    padding: 0;
+    font-family: poppins;
+    vertical-align: middle;
+    margin: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    color: #FF007F;
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.right ul li a:hover {
+    color: #FF007F;
+}
+
+.burger-menu {
+    display: none;
+}
+
+.cross {
+    display: none;
+}
+
+.about h2 {
+    font-family: poppins;
+    color: #FF007F;
+    margin-top: 14px;
+    margin-left: 14px;
+    display: block;
+
+}
+
+.about p {
+    font-family: poppins;
+    width: 800px;
+    margin-left: 13px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.about img {
+    float: right;
+    width: 270px;
+    margin-right: 60px;
+    margin-top: -20px;
+}
+
+.colortext {
+    color: #FF007F;
+}
+
+.subheading {
+    font-family: poppins;
+    color: #FF007F;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+    display: block;
+}
+
+.service-box {
+    height: 100px;
+    width: 250px;
+    background-color: #fff3f3;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service-box:hover {
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.service-box p {
+    font-family: poppins;
+    color: black;
+    font-size: 14px;
+
+}
+
+.service-name {
+    font-family: poppins;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.my-services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.project p {
+    font-family: poppins;
+    color: black;
+    font-size: 14px;
+    width: 300px;
+    margin-top: 5px;
+}
+
+.project {
+    margin-left: 20px;
+    margin-top: 30px;
+    transition: 0.3s;
+    position: relative;
+    width: 300px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 76%;
+    background-color: #ff44a2d1;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.image-overlay:hover {
+    opacity: 1;
+}
+
+.image-overlay p {
+    color: white;
+    font-family: poppins;
+    font-size: 18px;
+    margin-left: 97px;
+    top: 45px;
+}
+
+.my-projects {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.project-pic {
+    width: 300px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+}
+
+.project a {
+    text-decoration: none;
+}
+
+.hire-banner {
+    height: 200px;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+
+.ad-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: bottom;
+    filter: brightness(70%);
+
+}
+
+.hire-banner p {
+    position: absolute;
+    color: white;
+    top: 35px;
+    left: 380px;
+    font-family: poppins;
+    font-size: 22px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.hire-banner button {
+    position: absolute;
+    color: white;
+    background-color: transparent;
+    top: 80px;
+    left: 590px;
+    font-family: poppins;
+    font-size: 16px;
+    border: 1px solid white;
+    transition: 0.3s;
+    width: 100px;
+    cursor: pointer;
+}
+
+.hire-banner button:hover {
+    background-color: #FF007F ;
+    padding: 3px;
+
+}
+
+.contactbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-side {
+    display: inline-block;
+    width: 550px;
+    height: 300px;
+    background-color: rgb(49, 49, 49)
+}
+
+.right-side {
+    background-color: #FF007F;
+    display: inline-block;
+    width: 210px;
+    height: 300px;
+}
+
+.contact-title {
+    font-family: poppins;
+    color: #FF007F;
+    margin-top: 5px;
+    margin-left: 14px;
+    margin-bottom: 40px;
+    display: block;
+
+}
+
+.left-side p {
+    color: white;
+    font-family: poppins;
+    font-size: 16px;
+    margin-left: 14px;
+    margin-top: 14px;
+}
+
+.textbox {
+    width: 400px;
+    margin-left: 14px;
+    padding-left: 10px;
+    margin-top: 9px;
+}
+
+.textbox-subject {
+    width: 400px;
+    height: 80px;
+    margin-left: 14px;
+    padding-left: 10px;
+    margin-top: 9px;
+}
+
+.submit-btn {
+    background-color: white;
+    color: black;
+    height: 30px;
+    font-family: poppins;
+    width: 100px;
+    border: none;
+    margin-top: 20px;
+    margin-left: 14px;
+    display: block;
+    cursor: pointer;
+}
+
+.right-side p {
+    color: black;
+    font-family: poppins;
+    font-size: 16px;
+    margin-left: 14px;
+    margin-top: 14px;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-section img {
+    width: 30px;
+    margin-top: 14px;
+    margin-left: 3px;
+}
+
+.right-section p {
+    font-size: 12px;
+    color: black;
+    font-family: poppins;
+    margin-right: 3px;
+}
+.footer {
+    background-color: rgb(49, 49, 49);
+    text-align: center;
+    font-family: poppins;
+    font-size: 12px;
+    color: white;
+    margin-top: 60px;
+}
+.footer p {
+    margin-bottom: 1px;
+}
+.hero-btn a {
+    text-decoration: none;
+    color: white;
+}
+.hero-btn a:hover {
+    color:#FF007F;
+}
+
+
+
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+    .right ul li {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .right {
+        position: absolute;
+        background-color: #FF007F;
+        width: 100%;
+        height: 150px;
+        top: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s ease;
+    }
+
+    .burger-menu {
+        width: 40px;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        cursor: pointer;
+        display: block;
+        z-index: 0;
+    }
+
+    .cross {
+        width: 40px;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        cursor: pointer;
+        display: block;
+    }
+
+    .banner-info {
+        font-size: 12px;
+    }
+
+    .title {
+        font-size: 34px;
+    }
+
+    .about p {
+        width: 360px;
+        margin-bottom: 10px;
+    }
+
+    .my-services {
+        flex-direction: column;
+    }
+
+    .service-box {
+        margin-left: 60px;
+        margin-bottom: 20px;
+    }
+
+    .my-projects {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project {
+        margin-bottom: 10px;
+    }
+
+    .hire-banner p {
+        font-size: 20px;
+        text-align: center;
+        top: 10px;
+        left: 0;
+    }
+
+    .hire-banner button {
+        left: 140px;
+        margin-top: 10px;
+    }
+    .contactbox {
+        flex-direction: column;
+    }
+    .left-side p  {
+       margin-left: 100px;
+    }
+    .textbox {
+        width: 300px;
+        margin-left: 100px;
+    }
+    .textbox-subject {
+        width: 300px;
+        margin-left: 100px;
+    }
+    .right-side {
+       height: 100px;
+       width: 100%;
+    }
+    .submit-btn {
+        margin-left: 100px;
+    }
+    .right-side-title {
+        margin-left:90px;
+    }
+}
+
+/* Key Frames */
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+  
+    </style>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoderKyo.com</title>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="header">
+            <div class="left">
+                <p> CoderKyo </p>
+            </div>
+            <div class="right" id="navbar">
+                <img class="cross" src="images/cross.png" onclick="closemenu()">
+                <ul id="navbar">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href=#about>ABOUT</a></li>
+                    <li><a href=#contact_>CONTACT</a></li>
+                </ul>
+            </div>
+            <img class="burger-menu" src="images/burger.png" onclick="showmenu()">
+        </div>
+        <div class="banner-info">
+            <p class="title">Coder Kyo</p>
+            <p class="my-info">I'm Kyo, An Intermediate level Web Developer</p>
+            <p class="hero-btn"><a href="#contact_"> Contact Me </a> </p>
+        </div>
+    </div>
+    <div class="about" id="about">
+        <h2>Greetings ,</h2>
+        <p>I'm <span class=colortext> Kyo </span>,An intermediate level <span class="colortext"> web developer </span>
+            with over 6 months of experience . I use languages such as HTML , CSS, Javascript and frameworks like
+            Bootstrap to get the job done ! I'm very passionate about my work and will always provide you with Quality
+            content . </p>
+        <img src="images/images_29.jpeg">
+    </div>
+    <p class="subheading">MY SERVICES</p>
+    <div class="my-services">
+        <div class="service-box">
+            <p class="service-name">BUGS</p>
+            <p>I can find bugs or the reason for unwanted output and fix your code to get the desired output.</p>
+        </div>
+
+        <div class="service-box">
+            <p class="service-name">WEBSITE</p>
+            <p>I can make a website from scratch with responsive and attractive design.</p>
+        </div>
+    </div>
+    <p class="subheading">MY PROJECTS </p>
+    <div class="my-projects">
+
+        <div class="project"><a href="calculator.html">
+                <img class="project-pic" src="images/20220602_154643.jpeg">
+                <div class="image-overlay">
+                    <p>Calculator</p>
+                </div>
+                <p>A working Calculator Made with JavaScript</p>
+
+            </a>
+        </div>
+
+        <div class="project"><a href="Cafex.html">
+                <img class="project-pic" src="images/20220602_154718.jpeg">
+                <div class="image-overlay">
+                    <p>Landing Page</p>
+                </div>
+                <p>The Landing Page of an E Commerce Website</p>
+
+            </a>
+        </div>
+    </div>
+    <div class="hire-banner">
+        <img src="images/bnr.jpg" class="ad-img">
+        <p>So Have You Decided Yet ? If Yes, Then Hire Me !</p>
+        <button>HIRE ME</button>
+    </div>
+    <h2 id="contact_" class="contact-title">Contact Form</h2>
+    <div class="contact">
+        <form class="contactbox" action="https://formsubmit.co/CoderKyo123@gmail.com" method="POST">
+            <div class="left-side">
+                <p>You are just a Click away from Me !</p>
+                <p class="question">Gmail Id</p>
+                <input id="mail-id" name="Email" type="email" class="textbox">
+
+                <p class="question">Subject</p>
+                <input type="text" name="Subject" class="textbox-subject">
+
+                <button class="submit-btn">SUBMIT</button>
+            </div>
+            <div class="right-side">
+                <p class="right-side-title">Connect with Me</p>
+                <div class="socials">
+                    <div class="left-section">
+                        <img src="images/mail.png">
+                        <div class="right-section">
+                            <p>CoderKyo123@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <p>Made By Coder Kyo | All Rights Reserved <br> &#169; Coder Kyo 2022 </p>
+    </div>
+</body>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    let navbar = document.getElementById('navbar');
+    function showmenu() {
+        navbar.style.top = "0";
+    }
+
+    function closemenu() {
+        navbar.style.top = "-200px"
+    }
+
+
+</script>
+
+</html>
